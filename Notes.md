@@ -29,3 +29,23 @@
 * Employee deletion should remove from table
 
 * Employee deletion should remove from costs
+
+#Processes#
+
+[] Collect user input
+
+[] Create new employee
+
+[] Append employee to DOM
+
+[] Clear input values
+
+#Functions#
+
+addEmployee() -> ()
+calls
+  createEmployee(firstName, lastName, id, jobTitle, salary) -> Employee
+  displayEmployee(employee) -> ()
+  calculateMonthlyCost() -> monthlyCost
+  displayCost(monthlyCost) -> ()
+  clearForm() -> ()
