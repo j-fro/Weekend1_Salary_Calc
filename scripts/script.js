@@ -18,6 +18,38 @@ var displayEmployee = function(employeeArray) {
   table.append(htmlString);
 };
 
+var calculateMonthlyCost = function() {
+  if (debug) { console.log("In calculateMonthlyCost"); }
+  // Get an array of table rows
+  var rows = $("tr");
+  var totalSalary = 0;
+  // Loop through table rows and sum the salaries
+  for (var i = 0; i < rows.length; i++) {
+    var salary = parseInt($("tr").eq(i).data("salary"));
+    // Exclude NaN (the header row)
+    if (!isNaN(salary)) {
+      totalSalary += salary;
+    }
+  }
+  if (debug) { console.log(totalSalary); }
+  // Divide for monthly total
+  return totalSalary / 12;
+};
+
+var displayMonthlyCost = function(monthlyCost) {
+  // Round to the nearest penny
+  var roundedMonthlyCost = Math.round(monthlyCost * 100) / 100;
+  $("#totalCost").html("$" + roundedMonthlyCost);
+};
+
+var clearInputFields = function() {
+  $("#firstName").val("");
+  $("#lastName").val("");
+  $("#idNumber").val("");
+  $("#jobTitle").val("");
+  $("#salary").val("");
+};
+
 var addEmployee = function() {
   if (debug) { console.log("Inside addEmployee"); }
   // Collect user input from the DOM
@@ -34,5 +66,17 @@ var addEmployee = function() {
     console.log(jobTitle);
     console.log(salary);
   }
-  var employee = displayEmployee([firstName, lastName, id, jobTitle, salary]);
+  displayEmployee([firstName, lastName, id, jobTitle, salary]);
+  var monthlyCost = calculateMonthlyCost();
+  displayMonthlyCost(monthlyCost);
+  clearInputFields();
 };
+
+$(document).ready( function() {
+  if (debug) {
+    displayEmployee(["Dev", "Jana", "1", "Instructor", "75000"]);
+    displayEmployee(["Millie", "Walsh", "2", "Instructor", "84000"]);
+    displayEmployee(["Jimmy", "Ericson", 3, "Student", "23000"]);
+    var cost = calculateMonthlyCost();
+    displayMonthlyCost(cost);
+  }});
