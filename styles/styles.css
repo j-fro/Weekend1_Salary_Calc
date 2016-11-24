@@ -1,8 +1,15 @@
 body {
   text-align: center;
+  background-color: #333333;
+  color: #dddddd;
+  font-family: Tahoma, sans-serif;
 }
 
 input, button {
   margin: auto;
   display: block;
+}
+
+table {
+  display: inline-block;
 }
