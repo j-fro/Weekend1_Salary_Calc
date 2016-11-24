@@ -50,6 +50,24 @@ var clearInputFields = function() {
   $("#salary").val("");
 };
 
+var addSelectOptions = function() {
+  // Reset the select to empty
+  $(".employeeNames").html("");
+  // Get the first table row
+  var tableRow = $("tr").first();
+  console.log("Header Row: " + tableRow);
+  // Skip the header row
+  var i = 1;
+  while(tableRow.length > 0) {
+    tableRow = $("tr").eq(i);
+    console.log("Table Row: " + i);
+    console.log(tableRow);
+    var employeeName = tableRow.data("name");
+    $(".employeeNames").append("<option value='" + employeeName + "'>" + employeeName + "</option>");
+    i++;
+  }
+};
+
 var addEmployee = function() {
   if (debug) { console.log("Inside addEmployee"); }
   // Collect user input from the DOM
@@ -70,6 +88,28 @@ var addEmployee = function() {
   var monthlyCost = calculateMonthlyCost();
   displayMonthlyCost(monthlyCost);
   clearInputFields();
+  addSelectOptions();
+};
+
+var removeEmployee = function() {
+  var employeeName = $(".employeeNames").val();
+  var tableRow = $("tr").first();
+  console.log("Header Row: " + tableRow);
+  // Skip the header row
+  var i = 1;
+  // Loop until no rows remain
+  while(tableRow.length > 0) {
+    tableRow = $("tr").eq(i);
+    console.log("Table Row: " + i);
+    console.log(tableRow);
+    // If table row's name matches, remove it
+    if (tableRow.data("name") === employeeName) {
+      tableRow.remove();
+    }
+    i++;
+  }
+  // Reset the select
+  addSelectOptions();
 };
 
 $(document).ready( function() {
@@ -79,4 +119,5 @@ $(document).ready( function() {
     displayEmployee(["Jimmy", "Ericson", 3, "Student", "23000"]);
     var cost = calculateMonthlyCost();
     displayMonthlyCost(cost);
+    addSelectOptions();
   }});

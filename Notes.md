@@ -32,13 +32,25 @@
 
 #Processes#
 
-[] Collect user input
+[x] Collect user input
 
-[] Create new employee
+[x] Create new employee
 
-[] Append employee to DOM
+[x] Append employee to DOM
 
-[] Clear input values
+[x] Clear input values
+
+[] Select box
+
+  [] Populate with employee names
+
+    [] Once on page load
+
+    [] Each time an employee is added
+
+[] Delete button
+
+  [] Removes row with the matching data-name
 
 #Functions#
 
