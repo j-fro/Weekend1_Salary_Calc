@@ -43,11 +43,7 @@ var displayMonthlyCost = function(monthlyCost) {
 };
 
 var clearInputFields = function() {
-    $("#firstName").val("");
-    $("#lastName").val("");
-    $("#idNumber").val("");
-    $("#jobTitle").val("");
-    $("#salary").val("");
+    $("input").val("");
 };
 
 var addSelectOptions = function() {
