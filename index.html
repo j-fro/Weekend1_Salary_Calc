@@ -12,33 +12,37 @@
 
 <body>
     <main>
-        <h1>Monthly Payroll:</h1>
-        <h2 id="totalCost">$0</h2>
-        <h3>Employees</h3>
-        <table id="employeeTable">
-            <thead>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>ID Number</td>
-                <td>Title</td>
-                <td>Salary</td>
-            </thead>
-        </table>
-        <section class="changeEmployees">
-            <section class="addEmployee">
-                <h3>Add New Employee</h3>
-                <input type="text" id="firstName" placeholder="First Name">
-                <input type="text" id="lastName" placeholder="Last Name">
-                <input type="text" id="idNumber" placeholder="ID Number">
-                <input type="text" id="jobTitle" placeholder="Job Title">
-                <input type="text" id="salary" placeholder="Annual Salary">
-                <button type="button" id="submitButton" onclick="addEmployee()">Create Employee</button>
-            </section>
-            <section class="deleteEmployee">
-                <h3>Remove an Employee</h3>
-                <select class="employeeNames">
-        </select>
-                <button type="button" onclick="removeEmployee()">Remove Employee</button>
+        <section class="payroll">
+            <h1>Monthly Payroll:</h1>
+            <h2 id="totalCost">$0</h2>
+        </section>
+        <section class="employees">
+            <h3>Employees</h3>
+            <table id="employeeTable">
+                <thead>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>ID Number</td>
+                    <td>Title</td>
+                    <td>Salary</td>
+                </thead>
+            </table>
+            <section class="changeEmployees">
+                <section class="addEmployee">
+                    <h3>Add New Employee</h3>
+                    <input type="text" id="firstName" placeholder="First Name">
+                    <input type="text" id="lastName" placeholder="Last Name">
+                    <input type="text" id="idNumber" placeholder="ID Number">
+                    <input type="text" id="jobTitle" placeholder="Job Title">
+                    <input type="text" id="salary" placeholder="Annual Salary">
+                    <button type="button" id="submitButton" onclick="addEmployee()">Create Employee</button>
+                </section>
+                <section class="deleteEmployee">
+                    <h3>Remove an Employee</h3>
+                    <select class="employeeNames">
+                    </select>
+                    <button type="button" onclick="removeEmployee()">Remove Employee</button>
+                </section>
             </section>
         </section>
     </main>
