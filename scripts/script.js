@@ -94,6 +94,12 @@ var removeEmployee = function() {
     // Iterate through table rows and remove those with a matching name
     $("tr").each(function() {
         if ($(this).data("name") === employeeName) {
+            var currentCost = $("#totalCost").html();
+            // Remove the $ sign from the html string
+            currentCost = currentCost.substring(1, currentCost.length);
+            // Subtract the removed salary (divided by 12 for monthly) and round to nearest penny
+            var totalCost = Math.round((currentCost - $(this).data("salary") / 12) * 100) / 100;
+            $("#totalCost").html("$" + totalCost);
             $(this).remove();
         }
     });
