@@ -1,6 +1,5 @@
 var debug = false;
 
-
 var displayEmployee = function(employeeArray) {
     if (debug) {
         console.log("Inside displayEmployee");
