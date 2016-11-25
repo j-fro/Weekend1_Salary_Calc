@@ -1,8 +1,18 @@
 body {
   text-align: center;
-  background-color: #333333;
-  color: #dddddd;
+  background-color: #eeeeee;
+  color: #111111;
   font-family: Tahoma, sans-serif;
+}
+
+main {
+  width: 75%;
+  margin: auto;
+  border: 1px solid white;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
 }
 
 input, button {
@@ -14,10 +24,19 @@ table {
   display: inline-block;
 }
 
-/*.addEmployee {
-  float: left;
+td {
+  border-bottom: 1px solid white;
+  padding: 5px 10px 5px 10px;
 }
 
-.deleteEmployee {
-  float: right;
+/*.addEmployee {
+  float: left;
+}*/
+.addEmployee, .deleteEmployee {
+  display: inline-block;
+  padding: 0 20px 15px 20px;
+}
+
+/*.deleteEmployee {
+  margin-bottom: 15px;
 }*/
