@@ -33,9 +33,6 @@ td {
   padding: 5px 10px 5px 10px;
 }
 
-/*.addEmployee {
-  float: left;
-}*/
 .payroll, .employees, .addEmployee, .deleteEmployee {
   display: inline-block;
 
@@ -49,7 +46,3 @@ td {
 .addEmployee, .deleteEmployee {
   vertical-align: top;
 }
-
-/*.deleteEmployee {
-  margin-bottom: 15px;
-}*/
