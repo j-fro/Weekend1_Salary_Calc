@@ -1,5 +1,8 @@
-var debug = false;
+var debug = true;
 
+var roundDollars = function(number) {
+  return Math.round(number * 100) / 100;
+};
 var displayEmployee = function(employeeArray) {
     if (debug) {
         console.log("Inside displayEmployee");
@@ -38,7 +41,7 @@ var calculateMonthlyCost = function() {
 
 var displayMonthlyCost = function(monthlyCost) {
     // Round to the nearest penny
-    var roundedMonthlyCost = Math.round(monthlyCost * 100) / 100;
+    var roundedMonthlyCost = roundDollars(monthlyCost);
     $("#totalCost").html("$" + roundedMonthlyCost);
 };
 
@@ -93,7 +96,7 @@ var removeEmployee = function() {
             // Remove the $ sign from the html string
             currentCost = currentCost.substring(1, currentCost.length);
             // Subtract the removed salary (divided by 12 for monthly) and round to nearest penny
-            var totalCost = Math.round((currentCost - $(this).data("salary") / 12) * 100) / 100;
+            var totalCost = roundDollars((currentCost - $(this).data("salary") / 12));
             $("#totalCost").html("$" + totalCost);
             $(this).remove();
         }
