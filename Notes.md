@@ -40,17 +40,17 @@
 
 [x] Clear input values
 
-[] Select box
+[x] Select box
 
-  [] Populate with employee names
+  [x] Populate with employee names
 
-    [] Once on page load
+    [x] Once on page load
 
-    [] Each time an employee is added
+    [x] Each time an employee is added
 
-[] Delete button
+[x] Delete button
 
-  [] Removes row with the matching data-name
+  [x] Removes row with the matching data-name
 
 #Functions#
 
